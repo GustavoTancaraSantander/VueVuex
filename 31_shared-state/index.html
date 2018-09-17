@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Manejo de estado</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+                         <!-- fase 1 -> modelos independientes  -->
+                        <h2> modelos independientes </h2>
+    <div id="instancia1">
+        {{ instructor.nombre }}
+    </div>
+    <div id="instancia2"> {{ instructor.nombre }}</div>
+
+                        <!-- fase 2 -> modelo referenciado -->
+                        <h2> modelo referenciado compartido</h2>
+    <div id="app1"> {{ instructor.nombre }} </div>
+    <div id="app2"> {{ instructor.nombre }} </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
