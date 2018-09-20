@@ -8,15 +8,16 @@ const productos = [
   ];
 
 const mutations = {
-  //addProducto: (state, newProducto) => state.productos.push(newProducto), // no reconoce (state)->undefined
-  addProducto: (productos , newProducto) => productos.push(newProducto), // line 17>> hace referencia a state:productos asume state implicitamente
+  /* No reconoce (state)->undefined, la razon puede ser logica dado Vue.use.(Vuex)
+                   y como este no es un archivo .vue sino .js                     */
+  //addProducto: (state, newProducto) => state.productos.push(newProducto),
+  addProducto: (productos , newProducto) => productos.push(newProducto), 
 };
-
 
 export default {
   state: productos,
-  mutations: mutations, // or (mutations,) with ES6
-  //mutations,
+  // mutations: mutations, // or (mutations,) with ES6
+  mutations,
 };
 
 

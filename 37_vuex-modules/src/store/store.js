@@ -1,29 +1,17 @@
-
 import Vue from 'vue'
 import Vuex from'vuex'
 Vue.use(Vuex);
 
-import products from './modules/productos.js'
-
-/* ESTRUCTURA con modules de productos */
+import products from './modules/productos'
+import cart from './modules/carrito'
 
 export const store = new Vuex.Store({
-
-  state:{
-     carrito:[],
-  },
-  getters:{
-    totalCarrito: (state) => state.carrito.reduce((total, prod) => total + prod.price, 0.0),
-  },
-
-  mutations:{
-    //addProducto: (state, newProducto) => state.productos.push(newProducto),
-    addCarrito:  (state,indice)      => state.carrito.unshift(state.productos[indice]),
-    deleteProducto: (state,indice)   => state.carrito.splice(indice,1),
-    deleteProductMap: (state,indice) => state.carrito.splice(indice,1),
-  },
+                  /* ESTRUCTURA con modules de productos + carrito COMPLETO */
   modules:{
-    productos:products
+    productos:products,
+    carrito: cart,
   }
 
 })
+/*  Notar que se produce un new state por cada modulo. */
+/* En realidad se produce new state, getters, mutations, actions; producido al exportar*/
